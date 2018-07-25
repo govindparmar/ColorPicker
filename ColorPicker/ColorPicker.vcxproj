@@ -143,6 +143,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="enumchildproc.c" />
+    <ClCompile Include="onclose.c" />
+    <ClCompile Include="oncreate.c" />
+    <ClCompile Include="ondestroy.c" />
+    <ClCompile Include="onkeydown.c" />
+    <ClCompile Include="registerwcex.c" />
+    <ClCompile Include="timerproc.c" />
+    <ClCompile Include="windowproc.c" />
+    <ClCompile Include="wwinmain.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CP.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -14,4 +14,38 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="wwinmain.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enumchildproc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oncreate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="onclose.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ondestroy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="onkeydown.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="registerwcex.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timerproc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="windowproc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
