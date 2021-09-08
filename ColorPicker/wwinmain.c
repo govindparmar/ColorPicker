@@ -21,7 +21,7 @@ INT APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 	}
 
 	hWnd = CreateWindowExW(WS_EX_OVERLAPPEDWINDOW, g_wszClassName, L"Color Picker", WS_VISIBLE | WS_SYSMENU, 100, 100, 200, 150, NULL, NULL, hInstance, NULL);
-	if(!hWnd)
+	if(NULL == hWnd)
 	{
 		MessageBoxW(NULL, L"Window Creation Failed", L"Error", MB_OK | MB_ICONSTOP);
 		return -1;
