@@ -11,7 +11,7 @@ VOID CALLBACK TimerProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ UINT_PTR idEvent, _I
 	RECT windowRect;
 
 	GetCursorPos(&p);
-	desktopDC = GetDC(0);
+	desktopDC = GetDC(NULL);
 	winDC = GetDC(hWnd);
 	pixel = GetPixel(desktopDC, p.x, p.y);
 	hEdit = FindWindowExW(hWnd, NULL, L"Edit", NULL);
