@@ -27,6 +27,7 @@ BOOL WINAPI OnCreate(_In_ HWND hWnd, _In_ LPCREATESTRUCTW lpCreateStruct);
 VOID WINAPI OnClose(_In_ HWND hWnd);
 VOID WINAPI OnDestroy(_In_ HWND hWnd);
 VOID WINAPI OnKeydown(_In_ HWND hWnd, _In_ UINT uVK, _In_ BOOL fDown, _In_ INT nRepeat, _In_ UINT uFlags);
+VOID WINAPI OnPaint(_In_ HWND hWnd);
 ATOM WINAPI RegisterWCEX(_In_ HINSTANCE hInstance);
 VOID CALLBACK TimerProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ UINT_PTR idEvent, _In_ DWORD dwTime);
 LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ WPARAM wParam, _In_ LPARAM lParam);

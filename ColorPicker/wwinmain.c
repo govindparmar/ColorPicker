@@ -6,6 +6,13 @@ INT APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 {
 	HWND hWnd;
 	MSG Msg;
+	NONCLIENTMETRICSW ncm;
+	HFONT hfDefault;
+
+	ZeroMemory(&ncm, sizeof(NONCLIENTMETRICSW));
+	ncm.cbSize = sizeof(NONCLIENTMETRICSW);
+	SystemParametersInfoW(SPI_GETNONCLIENTMETRICS, sizeof(NONCLIENTMETRICSW), &ncm, FALSE);
+	hfDefault = CreateFontIndirectW(&ncm.lfMessageFont);
 
 	if(RegisterWCEX(hInstance) == (ATOM)0)
 	{
@@ -20,9 +27,8 @@ INT APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
 		return -1;
 	}
 
-
 	ShowWindow(hWnd, SW_SHOW);
-	EnumChildWindows(hWnd, EnumChildProc, 0);
+	EnumChildWindows(hWnd, EnumChildProc, (LPARAM)&hfDefault);
 	UpdateWindow(hWnd);
 
 	while(GetMessageW(&Msg, NULL, 0, 0) > 0)

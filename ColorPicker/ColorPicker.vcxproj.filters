@@ -42,6 +42,9 @@
     <ClCompile Include="windowproc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="onpaint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CP.h">
