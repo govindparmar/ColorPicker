@@ -1,5 +1,7 @@
 #include "CP.h"
 
+CONST WCHAR g_wszClassName[] = L"ColorPickerWnd";
+
 ATOM WINAPI RegisterWCEX(_In_ HINSTANCE hInstance)
 {
 	WNDCLASSEXW wcex;
