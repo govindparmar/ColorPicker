@@ -148,7 +148,9 @@
     <ClCompile Include="oncreate.c" />
     <ClCompile Include="ondestroy.c" />
     <ClCompile Include="onkeydown.c" />
+    <ClCompile Include="onkillfocus.c" />
     <ClCompile Include="onpaint.c" />
+    <ClCompile Include="onsetfocus.c" />
     <ClCompile Include="registerwcex.c" />
     <ClCompile Include="timerproc.c" />
     <ClCompile Include="windowproc.c" />

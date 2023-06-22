@@ -45,6 +45,12 @@
     <ClCompile Include="onpaint.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="onsetfocus.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="onkillfocus.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CP.h">
