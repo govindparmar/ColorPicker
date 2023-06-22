@@ -1,40 +1,56 @@
 #include "CP.h"
 
+HDC g_hWinDC = NULL, g_hDesktopDC = NULL;
+HWND g_hEdit = NULL, g_hStatic = NULL;
+RECT g_rcSquare = { 0 };
+
 VOID CALLBACK TimerProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ UINT_PTR idEvent, _In_ DWORD dwTime)
 {
 	POINT p;
-	HDC winDC, desktopDC;
 	COLORREF pixel;
-	HWND hEdit, hStatic;
 	WCHAR pxTxt[15];
-	WCHAR msTxt[15];
-	RECT windowRect;
+	WCHAR msTxt[50];
 
 	GetCursorPos(&p);
-	desktopDC = GetDC(NULL);
-	winDC = GetDC(hWnd);
-	pixel = GetPixel(desktopDC, p.x, p.y);
-	hEdit = FindWindowExW(hWnd, NULL, L"Edit", NULL);
-	hStatic = FindWindowExW(hWnd, NULL, L"Static", NULL);
+	if (NULL == g_hDesktopDC)
+	{
+		g_hDesktopDC = GetDC(NULL);
+	}
+	if (NULL == g_hWinDC)
+	{
+		g_hWinDC = GetDC(hWnd);
+	}
+
+
+	pixel = GetPixel(g_hDesktopDC, p.x, p.y);
+	if (NULL == g_hEdit)
+	{
+		g_hEdit = FindWindowExW(hWnd, NULL, L"Edit", NULL);
+	}
+	if (NULL == g_hStatic)
+	{
+		g_hStatic = FindWindowExW(hWnd, NULL, L"Static", NULL);
+	}
+
+	g_hEdit = FindWindowExW(hWnd, NULL, L"Edit", NULL);
+	g_hStatic = FindWindowExW(hWnd, NULL, L"Static", NULL);
 
 	StringCchPrintfW(pxTxt, 15, L"0x%.8X", pixel);
-	StringCchPrintfW(msTxt, 15, L"(%d, %d)", p.x, p.y);
+	StringCchPrintfW(msTxt, 50, L"(%I32d, %I32d)", p.x, p.y);
 
-	SetWindowTextW(hEdit, pxTxt);
-	SetWindowTextW(hStatic, msTxt);
+	SetWindowTextW(g_hEdit, pxTxt);
+	SetWindowTextW(g_hStatic, msTxt);
 
-	windowRect.top = 10;
-	windowRect.left = 100;
-	windowRect.bottom = 80;
-	windowRect.right = 180;
+	if (0 == g_rcSquare.top)
+	{
+		g_rcSquare.top = 10;
+		g_rcSquare.left = 100;
+		g_rcSquare.bottom = 80;
+		g_rcSquare.right = 180;
+	}
 
-	FillRect(winDC, &windowRect, CreateSolidBrush(pixel));
+	FillRect(g_hWinDC, &g_rcSquare, CreateSolidBrush(pixel));
 
-	ReleaseDC(NULL, desktopDC);
-	ReleaseDC(NULL, winDC);
-
-	DeleteDC(desktopDC);
-	DeleteDC(winDC);
 
 	return;
 }

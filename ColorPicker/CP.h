@@ -21,6 +21,9 @@
 #endif
 
 EXTERN CONST WCHAR g_wszClassName[];
+EXTERN HDC g_hWinDC, g_hDesktopDC;
+EXTERN HWND g_hEdit, g_hStatic;
+EXTERN RECT g_rcSquare;
 
 BOOL CALLBACK EnumChildProc(_In_ HWND hWnd, _In_ LPARAM lParam);
 BOOL WINAPI OnCreate(_In_ HWND hWnd, _In_ LPCREATESTRUCTW lpCreateStruct);
