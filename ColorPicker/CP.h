@@ -6,6 +6,7 @@
 #include <sal.h>
 
 #define EXTERN extern
+#define STATIC static
 #define IDT_TIMER1 1001
 
 #if defined _M_IX86
@@ -27,10 +28,14 @@ BOOL CALLBACK EnumChildProc(_In_ HWND hWnd, _In_ LPARAM lParam);
 BOOL WINAPI OnCreate(_In_ HWND hWnd, _In_ LPCREATESTRUCTW lpCreateStruct);
 VOID WINAPI OnClose(_In_ HWND hWnd);
 VOID WINAPI OnDestroy(_In_ HWND hWnd);
-VOID WINAPI OnKeydown(_In_ HWND hWnd, _In_ UINT uVK, _In_ BOOL fDown, _In_ INT nRepeat, _In_ UINT uFlags);
+VOID WINAPI OnKeyDown(_In_ HWND hWnd, _In_ UINT uVK, _In_ BOOL fDown, _In_ INT nRepeat, _In_ UINT uFlags);
 VOID WINAPI OnKillFocus(_In_ HWND hWnd, _In_ HWND hWndNewFocus);
 VOID WINAPI OnPaint(_In_ HWND hWnd);
 VOID WINAPI OnSetFocus(_In_ HWND hWnd, HWND hWndOldFocus);
+
+_Check_return_
+_Success_(return)
+
 ATOM WINAPI RegisterWCEX(_In_ HINSTANCE hInstance);
 VOID CALLBACK TimerProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ UINT_PTR idEvent, _In_ DWORD dwTime);
 LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ WPARAM wParam, _In_ LPARAM lParam);

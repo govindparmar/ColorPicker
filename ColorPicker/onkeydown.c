@@ -1,6 +1,12 @@
 #include "CP.h"
 
-VOID WINAPI OnKeydown(_In_ HWND hWnd, _In_ UINT uVK, _In_ BOOL fDown, _In_ INT nRepeat, _In_ UINT uFlags)
+VOID WINAPI OnKeyDown(
+	_In_ HWND hWnd, 
+	_In_ UINT uVK, 
+	_In_ BOOL fDown, 
+	_In_ INT nRepeat, 
+	_In_ UINT uFlags
+)
 {
 	if (VK_F8 == uVK)
 	{

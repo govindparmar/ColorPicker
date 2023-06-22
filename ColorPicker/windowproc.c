@@ -7,7 +7,7 @@ LRESULT CALLBACK WindowProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ WPARAM wParam, _
 		HANDLE_MSG(hWnd, WM_CLOSE, OnClose);
 		HANDLE_MSG(hWnd, WM_CREATE, OnCreate);
 		HANDLE_MSG(hWnd, WM_DESTROY, OnDestroy);
-		HANDLE_MSG(hWnd, WM_KEYDOWN, OnKeydown);
+		HANDLE_MSG(hWnd, WM_KEYDOWN, OnKeyDown);
 		HANDLE_MSG(hWnd, WM_KILLFOCUS, OnKillFocus);
 		HANDLE_MSG(hWnd, WM_PAINT, OnPaint);
 		HANDLE_MSG(hWnd, WM_SETFOCUS, OnSetFocus);

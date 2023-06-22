@@ -1,20 +1,14 @@
 #include "CP.h"
 
 HDC g_hWinDC = NULL, g_hDesktopDC = NULL;
-HWND g_hEdit = NULL, g_hStatic = NULL;
 
 VOID CALLBACK TimerProc(_In_ HWND hWnd, _In_ UINT Msg, _In_ UINT_PTR idEvent, _In_ DWORD dwTime)
 {
+	STATIC CONST RECT rc = { 100, 10, 180, 80 };
 	POINT p;
 	COLORREF pixel;
 	WCHAR pxTxt[15];
 	WCHAR msTxt[40];
-	RECT rc;
-
-	rc.top = 10;
-	rc.left = 100;
-	rc.bottom = 80;
-	rc.right = 180;
 
 	GetCursorPos(&p);
 	if (NULL == g_hDesktopDC || NULL == g_hWinDC)

@@ -2,6 +2,9 @@
 
 CONST WCHAR g_wszClassName[] = L"ColorPickerWnd";
 
+_Check_return_
+_Success_(return)
+
 ATOM WINAPI RegisterWCEX(_In_ HINSTANCE hInstance)
 {
 	WNDCLASSEXW wcex;
